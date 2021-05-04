@@ -10,7 +10,6 @@ def calc_to_turtle_plane(raw_x, raw_y):
     return rescaled_x, rescaled_y
 
 player1 = PlayerPoint()
-print('Player 1')
 print('Choose position of a goal point')
 (raw_goal_x1, raw_goal_y1) = player1.get_coords()
 
@@ -26,8 +25,6 @@ distance_state = 'Distance unknown'
 new_distance_state = 'Distance unknown'
 while(1):
     distance = turtle1.calc_distance(turtle1.get_pose_x(), turtle1.get_pose_y(), scaled_goal_x1, scaled_goal_y1)
-    # print('Distance: ')
-    # print(distance)
     if (distance>8):
         distance_state = 'REALLY COLD!'
     elif(distance<=8 and distance > 4):
@@ -39,8 +36,6 @@ while(1):
     else:
         distance_state = 'POINT FOUND'
         print('CONGRATS! YOU FOUND THE POINT')
-        # close_node(process_window)
-        # close_node(process_teleop)
         break
     if(new_distance_state != distance_state):
         print(distance_state)
@@ -48,7 +43,6 @@ while(1):
     
 finish_timer = time.time()
 goal_time = round(finish_timer - start_timer, 2)
-# print('you won the game, congrats :) ')
 print('==============================')
 print('==============================')
 print('----------Your time: ---------')
@@ -61,15 +55,3 @@ print('==============================')
 print('=======THX FOR THE GAME=======')
 print('==============================')
 print('==============================')
-
-
-
-"""
-# Drugi gracz
-player2 = PlayerPoint()
-(x2, y2) = player2.get_coords()
-print("Player 2")
-print(x2)
-print(y2)
-"""
-
