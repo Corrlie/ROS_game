@@ -1,6 +1,6 @@
 # ROS_game
 
-This project is based on a popular party game - hunt the thimble. The project uses Robot Operating System (ROS) and OpenCV library and is written in Python programming language.
+This project is based on a popular party game - hunt the thimble. The project mainly uses Robot Operating System (ROS) and OpenCV library and is written in Python programming language.
 
 OS: Linux Ubuntu 20.04.1 LTS on Oracle VM VirtualBox
 
@@ -14,7 +14,7 @@ Libraries and ROS packages used:
 
 ## Description:
 
-First player has choose a point on the black plane (be careful not to show it to the other player!) and the other player has to find it using turtle from turtlesim package using teleoperation as soon as possible (**time is measured**). Current "temperature states" are being shown while playing the game (4 states - REALLY COLD!, cold, warm, HOT).
+First player has to choose a point on the black plane (be careful not to show it to the other player!) and the other player has to find it using turtle from turtlesim package using teleoperation as soon as possible (**time is measured**). Current "temperature states" are being shown while playing the game (4 states - REALLY COLD!, cold, warm, HOT).
 
 First player has to "hide" his point on the black window created with numpy 512x512 array. The code uses OpenCV mouse callback to get the point's position. First player can show selected point (and its x and y position) by choosing 'p' button (eng. "print") on the keyboard (but he has to be careful that the other player does not see it). He can then hide it from other player by clicking "c" (eng. "clear") on the keyboard. If the player wants to choose another point he can do this, because only the last point will be possibly saved. 
 The process of choosing the point is shown below (after clicking 'p'):
@@ -41,6 +41,14 @@ Prompts shown in the terminal are shown below:
 
 ## Testing the game:
 
-To run the game it is neccessary to have ROS Workspace catkin. In that workspace create a new package with rospy dependency and rebuild the workspace. Then download project .py files and place them in the src file of created package. After that the game is almost ready! All you have to do is run "**roscore**" command in new terminal and then in another new terminal opened in src directory (where all .py files are stored) run command "**python3 ros_game.py**". 
+To run the game it is neccessary to have ROS Workspace catkin. In that workspace create a new package with rospy dependency and rebuild the workspace. Then download project .py files and place them in the src file of created package. After that the game is almost ready! All you have to do is run "roscore" command **in new terminal**:
+```sh
+roscore
+```
+and then **in another new terminal opened in src directory (where all .py files are stored)** run command "python3 ros_game.py":
+```sh
+python3 ros_game.py
+```
+
 
 **That's all! Now you can play hunt the thimble using ROS!**
